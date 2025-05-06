@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urna Eletrônica - Grêmio Estudantil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main">
+        <div id="titulo">
+        </div>
+        <div class="container">
+            <h2>EMEF Benta Maria Ragassi Scutti - CAIC</h2>
+            <img src="caic-logo.png" alt="" id="logo">
+            <div class="sessao">
+                <div id="formSessao">
+                    <label for="sessaoInput">Nome ou Número da sessão: </label>
+                    <input type="text" id="sessaoInput" placeholder="Ex: 1 ou 1º ano A">
+                    <button onclick="iniciarSessao()" id="startSession">Iniciar Sessão</button>
+                </div>
+                <p id="sessaoAtual"></p>
+
+                <!-- Tela de votação, inicialmente oculta -->
+                <div id="telaVotacao" style="display: none;">
+                    <h3>Escolha seu candidato:</h3>
+                    <div id="buttonsGroup">
+                        <button onclick="votar(11)">11 <br>FÊNIX</button>
+                        <button onclick="votar(33)">33 <br>VISÃO DO FUTURO</button>
+                        <button onclick="votar(66)">66 <br>FUTURO BRILHANTE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button id="btnEncerrarSessao" onclick="encerrarSessao()" style="display: none;">Encerrar Sessão</button>
+        <div id="modalVoto" class="modal">
+            <div class="modal-content">
+                <span id="votoEscolhido"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+
+</body>
+
+</html>
