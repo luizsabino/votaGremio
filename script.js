@@ -112,7 +112,10 @@ function votar(numero) {
         return;
     }
 
-    votos[sessao].votos.push({ numero: numero });
+    votos[sessao].votos.push({
+        numero: numero,
+        horario: new Date().toLocaleString()
+    });
 
     localStorage.setItem('votos', JSON.stringify(votos));
 
@@ -131,7 +134,7 @@ function gerarXLS(sessao, votosData) {
 
     // Adicionando os votos um por um na planilha
     votosSessao.votos.forEach(v => {
-        dados.push([sessao, v.numero, new Date().toLocaleString()]);
+        dados.push([sessao, v.numero, v.horario || "Não registrado"]);
     });
 
     // Criando a planilha a partir dos dados
