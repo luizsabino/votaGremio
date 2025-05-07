@@ -148,7 +148,7 @@ function mostrarModalVoto(numeroVoto) {
     const votoEscolhido = document.getElementById('votoEscolhido');
 
     // Exibe a escolha do voto
-    votoEscolhido.textContent = `Você escolheu o candidato ${numeroVoto}.`;
+    votoEscolhido.textContent = `Você escolheu o candidato ${numeroVoto}`;
 
     // Mostra o modal
     modal.style.display = 'flex';
